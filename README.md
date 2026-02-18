@@ -12,9 +12,9 @@ A simple Neovim plugin for switching colorschemes interactively.
   config = function()
     require("parthenon").setup({
       schemes = {
-        "tokusa",
-        "habamax",
-        "cyberdream",
+        "colorscheme",
+        "colorscheme2",
+        "colorscheme3",
       },
     })
   end,
