@@ -2,9 +2,19 @@ local M = {}
 
 M.schemes = {}
 
+local default_keys = {
+	pick = "<leader>tc",
+}
+
 function M.setup(opts)
 	opts = opts or {}
 	M.schemes = opts.schemes or {}
+
+	local keys = vim.tbl_extend("force", default_keys, opts.keys or {})
+
+	if keys.pick then
+		vim.keymap.set("n", keys.pick, M.pick, { desc = "Pick colorscheme" })
+	end
 end
 
 local function notify_colorscheme(choice, ok)
